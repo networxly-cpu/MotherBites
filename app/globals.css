@@ -1,0 +1,212 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Village Brand Colors */
+  --primary-dark: #8B6F47;
+  --primary-rust: #C85A3A;
+  --primary-gold: #D4AF37;
+  --background-cream: #FEF5E7;
+  --text-dark: #2C1810;
+
+  /* Updated for Dark Rustic Theme */
+  --background: transparent;
+  --foreground: #FEF5E7; /* हे सर्व अक्षरांना क्रीम/पांढरं करेल */
+  
+  --card: rgba(26, 20, 16, 0.6); /* कार्ड्ससाठी डार्क ट्रान्सपरंट कलर */
+  --card-foreground: #FEF5E7;
+  
+  --popover: #1A1410;
+  --popover-foreground: #FEF5E7;
+  
+  --primary: #D4AF37; /* Gold */
+  --primary-foreground: #1A1410;
+  
+  --secondary: #C85A3A; /* Rust/Red */
+  --secondary-foreground: #FFFFFF;
+  
+  --muted: rgba(254, 245, 231, 0.1);
+  --muted-foreground: #D4C5B0; /* हलक्या अक्षरांसाठी (Subtitles) */
+  
+  --accent: #C85A3A;
+  --accent-foreground: #FEF5E7;
+  
+  --destructive: #EF4444;
+  --destructive-foreground: #1A1410;
+  
+  --border: rgba(254, 245, 231, 0.15); /* हलकी ट्रान्सपरंट बॉर्डर */
+  --input: rgba(254, 245, 231, 0.1);
+  --ring: #D4AF37;
+  
+  --radius: 0.625rem;
+}
+.dark {
+  --background: #1A1410;
+  --foreground: #FEF5E7;
+  --card: #2C1810;
+  --card-foreground: #FEF5E7;
+  --popover: #2C1810;
+  --popover-foreground: #FEF5E7;
+  --primary: #D4AF37;
+  --primary-foreground: #2C1810;
+  --secondary: #F4A583;
+  --secondary-foreground: #2C1810;
+  --muted: #6B5D4F;
+  --muted-foreground: #D4C5B0;
+  --accent: #C85A3A;
+  --accent-foreground: #FEF5E7;
+  --destructive: #EF4444;
+  --destructive-foreground: #1A1410;
+  --border: #4A4038;
+  --input: #2C1810;
+  --ring: #D4AF37;
+  --chart-1: #D4AF37;
+  --chart-2: #F4A583;
+  --chart-3: #C85A3A;
+  --chart-4: #8B6F47;
+  --chart-5: #D4C5B0;
+  --sidebar: #1A1410;
+  --sidebar-foreground: #FEF5E7;
+  --sidebar-primary: #D4AF37;
+  --sidebar-primary-foreground: #2C1810;
+  --sidebar-accent: #C85A3A;
+  --sidebar-accent-foreground: #FEF5E7;
+  --sidebar-border: #4A4038;
+  --sidebar-ring: #D4AF37;
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: 
+      url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='village' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3C!-- Wheat stalks --%3E%3Cpath d='M 20 80 Q 20 40 25 20' stroke='%23D4AF37' stroke-width='1.5' fill='none' opacity='0.15'/%3E%3Cline x1='25' y1='25' x2='15' y2='15' stroke='%23D4AF37' stroke-width='1' opacity='0.12'/%3E%3Cline x1='25' y1='35' x2='10' y2='30' stroke='%23D4AF37' stroke-width='1' opacity='0.12'/%3E%3C!-- Leaf elements --%3E%3Cpath d='M 70 70 Q 75 50 80 30' stroke='%238B6F47' stroke-width='1.2' fill='none' opacity='0.1'/%3E%3Ccircle cx='40' cy='50' r='3' fill='%23C85A3A' opacity='0.08'/%3E%3Ccircle cx='60' cy='60' r='2.5' fill='%23D4AF37' opacity='0.1'/%3E%3C!-- Traditional pattern --%3E%3Cline x1='0' y1='100' x2='100' y2='100' stroke='%238B6F47' stroke-width='0.5' opacity='0.06'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='%23FEF5E7'/%3E%3Crect width='100' height='100' fill='url(%23village)'/%3E%3C/svg%3E"),
+      radial-gradient(circle at 15% 35%, rgba(212, 175, 55, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 85% 75%, rgba(200, 90, 58, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 50% 50%, rgba(139, 111, 71, 0.08) 0%, transparent 50%),
+      linear-gradient(135deg, rgba(254, 245, 231, 1) 0%, rgba(254, 245, 231, 1) 100%);
+    background-attachment: fixed;
+    background-size: 100px 100px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+}
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  
+  body {
+    background-color: #1a1008 !important;
+    background-image: 
+      linear-gradient(rgba(26, 16, 8, 0.85), rgba(26, 16, 8, 0.85)), 
+      url('https://images.unsplash.com/photo-1606914501449-5a96b6ce24ca?q=80&w=2000&auto=format&fit=crop') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    color: #FEF5E7 !important; /* डार्क बॅकग्राउंडवर पांढरे/क्रिम अक्षरं दिसण्यासाठी */
+  }
+}
+
+@layer components {
+  /* Premium glow effects for cards and buttons */
+  .glow-primary {
+    @apply shadow-lg shadow-primary/40 transition-all duration-300;
+  }
+
+  .glow-secondary {
+    @apply shadow-lg shadow-secondary/40 transition-all duration-300;
+  }
+
+  .glow-accent {
+    @apply shadow-lg shadow-accent/40 transition-all duration-300;
+  }
+
+  /* Enhanced hover glow effects */
+  .hover-glow-primary:hover {
+    @apply shadow-2xl shadow-primary/60 drop-shadow-lg transition-all duration-300 scale-105;
+  }
+
+  .hover-glow-secondary:hover {
+    @apply shadow-2xl shadow-secondary/60 drop-shadow-lg transition-all duration-300 scale-105;
+  }
+
+  /* Button glow */
+  button, a[role="button"] {
+    @apply transition-all duration-200;
+  }
+
+  button:hover, a[role="button"]:hover {
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3)) drop-shadow(0 0 16px rgba(200, 90, 58, 0.2));
+  }
+
+  /* Card glow enhancement */
+  .bg-white {
+    @apply shadow-md shadow-primary/20;
+  }
+
+  .bg-white:hover {
+    @apply shadow-lg shadow-primary/35 transition-all duration-300;
+  }
+
+  /* Section glow backgrounds */
+  section {
+    position: relative;
+  }
+
+  section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+  }
+}
