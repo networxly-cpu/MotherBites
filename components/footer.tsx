@@ -90,7 +90,7 @@ export default function Footer() {
               </a>
               <div className="flex items-start gap-3 text-gray-400 group">
                 <div className="bg-white/5 p-2 rounded-full shrink-0 group-hover:bg-[#D4AF37]/20 transition-colors"><MapPin size={16} className="text-[#D4AF37]" /></div>
-                <span className="mt-1 leading-relaxed"> 103, D2, Kesar Tree Town, near bharat mata chowk, Moshi, Pimpri-Chinchwad, Maharashtra 411070 <br/> Maharashtra </span>
+                <span className="mt-1 leading-relaxed"> A-2 811, Kesar Tree Town, near bharat mata chowk, Moshi, Pimpri-Chinchwad, Maharashtra 411070 <br/> Maharashtra </span>
               </div>
             </div>
           </motion.div>
